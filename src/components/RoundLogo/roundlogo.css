@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.round-logo {
+  background-color: black;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  margin-top: 5vh;
+  background-image: url('../../images/roundlogo.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
