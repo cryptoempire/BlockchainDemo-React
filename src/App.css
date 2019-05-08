@@ -5,3 +5,9 @@
   margin-top: 76px;
   font-style: '';
 }
+
+.time {
+  color: rgba(0, 0, 0, 0.57);
+  font-size: 12px;
+  font-family: "Segoe";
+}
