@@ -11,3 +11,7 @@
   font-size: 12px;
   font-family: "Segoe";
 }
+
+input:hover {
+  border-color: rgba(14, 183, 236, 0.77);
+}
