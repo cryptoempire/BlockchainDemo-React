@@ -12,6 +12,11 @@
   font-family: "Segoe";
 }
 
+input {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; 
+}
+
 input:hover {
   border-color: rgba(14, 183, 236, 0.77);
 }

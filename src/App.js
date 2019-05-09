@@ -10,7 +10,7 @@ class App extends React.Component {
   return (
     <div>
       <Roundlogo />
-      <div className='title'>Blockchain</div>
+      <div className='title'>BLOCKCHAIN</div>
       <GenesisBlock/>
       <AddCard />
       {/*{

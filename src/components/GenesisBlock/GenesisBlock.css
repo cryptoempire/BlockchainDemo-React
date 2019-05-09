@@ -1,6 +1,18 @@
 p {
   font-size: 12px;
+  }
+.ant-tag-green {
+    color: #52c41a;
+    background-color: #f6ffed;
+    border: 1px solid;
+    border-radius: 8px;
+    border-color: #b7eb8f;
+    width: 475px;
+    height: 22px;
+    margin-left: 22px;
+    margin-top: 8px;
 }
+
 
 .block-card {
   width: 600px;
@@ -20,9 +32,11 @@ p {
 .data {
   display: grid;
   grid-template-columns: 2fr 14fr;
+  box-sizing: border-box;
   width: 530px;
   height: 30px;
   background-color: rgb(250, 250, 250);
+  margin-bottom: 4px;
 }
 
 .dataBox {
@@ -38,5 +52,5 @@ p {
   display: flex;
   align-items: center;
   margin-left: 10px;
-  margin-top: 14px;
+  margin-top: 6px;
 }
