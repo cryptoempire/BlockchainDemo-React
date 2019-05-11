@@ -1,9 +1,10 @@
 .title {
   text-align: center;
   letter-spacing: 5px;
-  font-size: 48px;
+  font-size: 54px;
   margin-top: 76px;
   font-style: '';
+  font-weight: 400;
 }
 
 .time {
@@ -14,9 +15,13 @@
 
 input {
   border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
 }
 
 input:hover {
   border-color: rgba(14, 183, 236, 0.77);
+}
+
+input:focus {
+  outline: 0;
 }
