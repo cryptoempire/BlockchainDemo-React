@@ -14,6 +14,15 @@ const initialState = {
 class App extends React.Component {
   constructor() {
     super();
+    this.state = {
+      block: {
+        id: 'GENESIS BLOCK',
+        previousHash : 0,
+        hash : sha256(0),
+        dayCreated : new Date().toGMTString(),
+        data: '  Welcome to the Blockchain!'
+      }
+    }
   }
 
 createBlock = () => {
@@ -28,15 +37,22 @@ onButtonClick = () => {
 
 
   render() {
+    const {id, previousHash, hash, dayCreated, data} = this.state.block;
   return (
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
-      <GenesisBlock previousHash='0' blockNum='GENESIS BLOCK'/>
+      {/*<GenesisBlock previousHash='0' blockNum='GENESIS BLOCK'/> */}
+      <GenesisBlock
+        id={id}
+        previousHash={previousHash}
+        hash={hash}
+        dayCreated={dayCreated}
+        data={data} />
       <AddCard onButtonClick={this.onButtonClick} />
 
       {
-        
+
         <div>
 
         </div>
