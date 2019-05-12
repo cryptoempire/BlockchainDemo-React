@@ -36,7 +36,7 @@ onButtonClick = () => {
       <AddCard onButtonClick={this.onButtonClick} />
 
       {
-        return
+        
         <div>
 
         </div>
