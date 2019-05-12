@@ -7,7 +7,7 @@ import './App.css';
 const sha256 = require('sha256');
 
 const initialState = {
-   blocks : [],
+   blocks : [ ]
 };
 
 
@@ -32,8 +32,18 @@ onButtonClick = () => {
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
-      <GenesisBlock/>
-      <AddCard onButtonClick={this.onButtonClick}/>
+      <GenesisBlock previousHash='0' blockNum='GENESIS BLOCK'/>
+      <AddCard onButtonClick={this.onButtonClick} />
+
+      {
+        return
+        <div>
+
+        </div>
+
+      }
+
+
       {/*{
         <BlockCard />}
       */}
