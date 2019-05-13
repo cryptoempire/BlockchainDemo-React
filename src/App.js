@@ -7,44 +7,64 @@ import './App.css';
 const sha256 = require('sha256');
 
 const initialState = {
-   blocks : [ ]
+      blockId: 'GENESIS BLOCK',
+    previousHash : 0,
+    hash : sha256(0),
+    dayCreated : new Date().toGMTString(),
+    data: '  Welcome to the Blockchain!',
+    blocks : []
+
 };
+
 
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      block: {
-        id: 'GENESIS BLOCK',
-        previousHash : 0,
-        hash : sha256(0),
-        dayCreated : new Date().toGMTString(),
-        data: '  Welcome to the Blockchain!'
-      }
-    }
+    this.state = initialState;
   }
 
 createBlock = () => {
 
 }
 
+
 onButtonClick = () => {
-  console.log('clicked');
+
+    console.log('clicked');
+    console.log(this.state.blockId, 'initial ID');
+    if (this.state.blockId === 'GENESIS BLOCK') {
+      this.setState({blockId : 0});
+    }
+
+
+    console.log(this.state.blockId, '  changed state');
+
+  this.setState({
+
+      blockId: this.state.blockId++,
+      previousHash : this.state.hash,
+      hash : sha256(this.state.data + this.state.blockId + this.state.previousHash),
+      dayCreated : new Date().toGMTString(),
+
+
+  })
+    console.log(this.state.blockId);
 
 
 }
 
 
   render() {
-    const {id, previousHash, hash, dayCreated, data} = this.state.block;
+    const {blockId, previousHash, hash, dayCreated, data} = this.state;
   return (
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
       {/*<GenesisBlock previousHash='0' blockNum='GENESIS BLOCK'/> */}
       <GenesisBlock
-        id={id}
+        id='genesis'
+        blockId={blockId}
         previousHash={previousHash}
         hash={hash}
         dayCreated={dayCreated}
@@ -53,9 +73,11 @@ onButtonClick = () => {
 
       {
 
-        <div>
+      Object.values(this.state.blocks).map(item => {
+        return console.log(item);
 
-        </div>
+
+      })
 
       }
 
