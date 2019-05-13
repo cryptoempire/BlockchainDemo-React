@@ -7,13 +7,13 @@ import './App.css';
 const sha256 = require('sha256');
 
 const initialState = {
-  block: {
-    id: 'GENESIS BLOCK',
+      blockId: 'GENESIS BLOCK',
     previousHash : 0,
     hash : sha256(0),
     dayCreated : new Date().toGMTString(),
-    data: '  Welcome to the Blockchain!'
-  }
+    data: '  Welcome to the Blockchain!',
+    blocks : []
+
 };
 
 
@@ -32,38 +32,39 @@ createBlock = () => {
 onButtonClick = () => {
 
     console.log('clicked');
-    console.log(this.state.block.id, 'initial ID');
-    if (this.state.block.id === 'GENESIS BLOCK') {
-      this.setState(Object.assign(this.state.block, {id: 0}));
-      // this.setState({block: { ...this.state.block, id: 0}});
+    console.log(this.state.blockId, 'initial ID');
+    if (this.state.blockId === 'GENESIS BLOCK') {
+      this.setState({blockId : 0});
     }
 
 
-    console.log(this.state.block.id, '  changed state');
+    console.log(this.state.blockId, '  changed state');
 
   this.setState({
-    block: {
-      id: this.state.block.id++,
-      previousHash : this.state.block.hash,
-      hash : sha256(this.state.block.data + this.state.block.id + this.state.block.previousHash),
+
+      blockId: this.state.blockId++,
+      previousHash : this.state.hash,
+      hash : sha256(this.state.data + this.state.blockId + this.state.previousHash),
       dayCreated : new Date().toGMTString(),
 
-    }
+
   })
-    console.log(this.state.block.id);
+    console.log(this.state.blockId);
+
 
 }
 
 
   render() {
-    const {id, previousHash, hash, dayCreated, data} = this.state.block;
+    const {blockId, previousHash, hash, dayCreated, data} = this.state;
   return (
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
       {/*<GenesisBlock previousHash='0' blockNum='GENESIS BLOCK'/> */}
       <GenesisBlock
-        id={id}
+        id='genesis'
+        blockId={blockId}
         previousHash={previousHash}
         hash={hash}
         dayCreated={dayCreated}
@@ -72,9 +73,11 @@ onButtonClick = () => {
 
       {
 
-        <div>
+      Object.values(this.state.blocks).map(item => {
+        return console.log(item);
 
-        </div>
+
+      })
 
       }
 
