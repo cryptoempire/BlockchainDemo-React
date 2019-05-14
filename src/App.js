@@ -24,11 +24,15 @@ class App extends React.Component {
     this.state = initialState;
   }
 
+componentDidMount() {
+
+}
+
 onButtonClick = () => {
     console.log(this.state.blockId, 'initial ID');
-    console.log('data', this.state.data);
+    this.setState({})
 
-    console.log(this.state.blockId, '  changed state');
+this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash, this.state.dayCreated] ]});
 
   this.setState({
 
@@ -41,7 +45,7 @@ onButtonClick = () => {
   })
     console.log(this.state.blockId);
 
-this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash] ]});
+
 
 console.log(this.state.blocks);
 
@@ -60,7 +64,7 @@ console.log(blockId);
 
       <GenesisBlock
         blockId={blockId}
-        previousHash={previousHash}
+
         hash={hash}
         dayCreated={dayCreated}
         data={data} />
@@ -73,7 +77,7 @@ console.log(blockId);
                   <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder="" defaultValue="    Welcome to Blockchain Demo 2.0!" /></div>
                   <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{blockMap[1]}</p></div>
                   <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{blockMap[2]}</div></div>
-                  <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{`BLOCK # ${index + 1}`}</span><div className='time time-genesis'>on {dayCreated}</div></div>
+                  <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{`BLOCK # ${index + 1}`}</span><div className='time time-genesis'>on {blockMap[3]}</div></div>
                 </div>
               </div>
             </div>
@@ -83,20 +87,6 @@ console.log(blockId);
 
       <AddCard onButtonClick={this.onButtonClick} />
 
-      {
-        //
-        // Object.values(this.state.blocks).map(item => {
-        //   return console.log(item);
-        //
-        //
-        // })
-
-      }
-
-
-      {/*{
-        <BlockCard />}
-      */}
     </div>
   );
 }
