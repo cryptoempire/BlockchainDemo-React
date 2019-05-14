@@ -52,7 +52,8 @@ onButtonClick = () => {
   })
     console.log(this.state.blockId);
 
-this.setState({blocks: [...this.state.blocks, '']})
+this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash] ]});
+
 console.log(this.state.blocks);
 
 }
@@ -60,6 +61,7 @@ console.log(this.state.blocks);
 
   render() {
     const {blockId, previousHash, hash, dayCreated, data} = this.state;
+    
   return (
     <div>
       <Roundlogo />
@@ -80,7 +82,7 @@ console.log(this.state.blocks);
                   <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder="" defaultValue="    Welcome to Blockchain Demo 2.0!" /></div>
                   <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{previousHash}</p></div>
                   <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{hash}</div></div>
-                  <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{`Block # ${index + 1}`}</span><div className='time time-genesis'>on {dayCreated}</div></div>
+                  <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{`BLOCK # ${index + 1}`}</span><div className='time time-genesis'>on {dayCreated}</div></div>
                 </div>
               </div>
             </div>
