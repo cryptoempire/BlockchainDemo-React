@@ -7,9 +7,9 @@ import './App.css';
 const sha256 = require('sha256');
 
 const initialState = {
-      blockId: 'GENESIS BLOCK',
+    blockId: 'GENESIS BLOCK',
     previousHash : 0,
-    hash : sha256(0),
+    hash : sha256(Math.random()),
     dayCreated : new Date().toGMTString(),
     data: '  Welcome to the Blockchain!',
     blocks : []
@@ -24,18 +24,9 @@ class App extends React.Component {
     this.state = initialState;
   }
 
-createBlock = () => {
-
-}
-
-
 onButtonClick = () => {
-
-
-    console.log('clicked');
     console.log(this.state.blockId, 'initial ID');
-    
-
+    console.log('data', this.state.data);
 
     console.log(this.state.blockId, '  changed state');
 
@@ -59,8 +50,10 @@ console.log(this.state.blocks);
 
   render() {
     const {blockId, previousHash, hash, dayCreated, data} = this.state;
-
+console.log(hash);
+console.log(blockId);
   return (
+
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
