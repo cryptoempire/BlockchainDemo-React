@@ -16,9 +16,9 @@ const GenesisBlock = ({blockId, previousHash, hash, dayCreated, data}) => {
         <div className="block-card">
           <div className="card_body">
             <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder="" defaultValue="    Welcome to Blockchain Demo 2.0!" /></div>
-            <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{previousHash}</p></div>
+            <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>0</p></div>
             <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{hash}</div></div>
-            <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{blockId}</span><div className='time time-genesis'>on {dayCreated}</div></div>
+            <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>GENESIS BLOCK</span><div className='time time-genesis'>on {dayCreated}</div></div>
           </div>
         </div>
       </div>

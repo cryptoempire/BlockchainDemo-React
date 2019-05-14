@@ -7,9 +7,9 @@ import './App.css';
 const sha256 = require('sha256');
 
 const initialState = {
-      blockId: 'GENESIS BLOCK',
+    blockId: 'GENESIS BLOCK',
     previousHash : 0,
-    hash : sha256(0),
+    hash : sha256(Math.random()),
     dayCreated : new Date().toGMTString(),
     data: '  Welcome to the Blockchain!',
     blocks : []
@@ -24,20 +24,9 @@ class App extends React.Component {
     this.state = initialState;
   }
 
-createBlock = () => {
-
-}
-
-
 onButtonClick = () => {
-
-
-    console.log('clicked');
     console.log(this.state.blockId, 'initial ID');
-    if (this.state.blockId === 'GENESIS BLOCK') {
-      this.setState( {blockId: 0} );
-    }
-
+    console.log('data', this.state.data);
 
     console.log(this.state.blockId, '  changed state');
 
@@ -61,8 +50,10 @@ console.log(this.state.blocks);
 
   render() {
     const {blockId, previousHash, hash, dayCreated, data} = this.state;
-    
+console.log(hash);
+console.log(blockId);
   return (
+
     <div>
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
@@ -80,8 +71,8 @@ console.log(this.state.blocks);
               <div className="block-card">
                 <div className="card_body">
                   <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder="" defaultValue="    Welcome to Blockchain Demo 2.0!" /></div>
-                  <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{previousHash}</p></div>
-                  <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{hash}</div></div>
+                  <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{blockMap[1]}</p></div>
+                  <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{blockMap[2]}</div></div>
                   <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{`BLOCK # ${index + 1}`}</span><div className='time time-genesis'>on {dayCreated}</div></div>
                 </div>
               </div>
