@@ -32,15 +32,12 @@ class App extends React.Component {
         dayCreated : new Date().toGMTString(),
     })
 
-      console.log(this.state.blockId);
       this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash, this.state.dayCreated] ]});
-      console.log(this.state.blocks);
   }
 
 
 
 onButtonClick = () => {
-    console.log(this.state.blockId, 'initial ID');
 
   this.setState({
       blockId: this.state.blockId++,
@@ -49,9 +46,7 @@ onButtonClick = () => {
       dayCreated : new Date().toGMTString(),
   })
 
-    console.log(this.state.blockId);
     this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash, this.state.dayCreated] ]});
-    console.log(this.state.blocks);
 }
 
 
@@ -85,16 +80,10 @@ onButtonClick = () => {
           )
         })
       }
-      {console.log(this.state.blocksS)}
-      {console.log(hash, 'current hash')}
-
-      {console.log(blockId, 'blockId')}
-      {console.log(previousHash, 'previousHash')}
       <AddCard onButtonClick={this.onButtonClick} />
-      
     </div>
   );
-}
+ }
 }
 
 export default App;
