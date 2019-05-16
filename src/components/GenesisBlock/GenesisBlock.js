@@ -1,14 +1,6 @@
 import React, {Component} from 'react';
 import './GenesisBlock.css';
 
-// const sha256 = require('sha256');
-//
-// let time =  new Date().toGMTString();
-//
-// let hash = sha256(Math.random());
-
-let genesisB = 'GENESIS BLOCK';
-
 const GenesisBlock = ({blockId, previousHash, hash, dayCreated, data}) => {
   return (
     <div>
@@ -24,6 +16,6 @@ const GenesisBlock = ({blockId, previousHash, hash, dayCreated, data}) => {
       </div>
     </div>
       );
-      };
+    };
 
       export default GenesisBlock;
