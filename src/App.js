@@ -2,6 +2,7 @@ import React from 'react';
 import Roundlogo from './components/RoundLogo/roundlogo.js';
 import GenesisBlock from './components/GenesisBlock/GenesisBlock.js';
 import AddCard from './components/AddCard/AddCard.js';
+import arrow from './images/arrow.png';
 import './App.css';
 
 const sha256 = require('sha256');
@@ -66,7 +67,7 @@ onButtonClick = () => {
         this.state.blocks.map((blockMap, index) => {
           return (
             <div>
-              {index > 0 ?   <div className='container arrow' ></div> : <div></div> }
+              {index > 0 ?   <div className='container' ><img id='arrow' src={arrow} /></div> : <div></div> }
               <div key={index} className='container'>
                 <div className="block-card">
                   <div className="card_body">
