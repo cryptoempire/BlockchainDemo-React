@@ -13,10 +13,7 @@ const initialState = {
     dayCreated : new Date().toGMTString(),
     data: '  Welcome to the Blockchain!',
     blocks : []
-
 };
-
-
 
 class App extends React.Component {
   constructor() {
@@ -32,6 +29,7 @@ class App extends React.Component {
         dayCreated : new Date().toGMTString(),
     });
     this.setState({blocks: [...this.state.blocks, [this.state.blockId, this.state.previousHash, this.state.hash, this.state.dayCreated] ]});
+
   }
 
 onInputChange = (input) => {
@@ -41,7 +39,7 @@ console.log(this.state.data);
 
 
 onButtonClick = () => {
-  
+
 
   this.setState({
       blockId: this.state.blockId++,
@@ -67,19 +65,27 @@ onButtonClick = () => {
       {
         this.state.blocks.map((blockMap, index) => {
           return (
-            <div key={index} className='container'>
-              <div className="block-card">
-                <div className="card_body">
-                  <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder='  Welcome to the Blockchain' defaultValue={blockMap[4]}  /></div>
-                  <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{blockMap[1]}</p></div>
-                  <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{blockMap[2]}</div></div>
-                  <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{index === 0 ? 'GENESIS BLOCK' : `BLOCK # ${index}`}</span><div className='time time-genesis'>on {blockMap[3]}</div></div>
+            <div>
+              {index > 0 ?   <div className='container arrow' ></div> : <div></div> }
+              <div key={index} className='container'>
+                <div className="block-card">
+                  <div className="card_body">
+                    <div className="data"><div className="dataBox">DATA</div><input type="text" name="" placeholder='  Welcome to the Blockchain' defaultValue={blockMap[4]}  /></div>
+                    <div style={{display:'flex', height: '30px'}}><p>PREVIOUS HASH</p> <p style={{marginLeft: '12px', color: 'green', fontSize: '10px', marginTop: '10px'}}>{blockMap[1]}</p></div>
+                    <div style={{display: 'flex'}}><p>HASH</p><div className='ant-tag-green'>{blockMap[2]}</div></div>
+                    <div style={{display: 'flex', marginTop: '24px'}}><span style={{fontSize: '24px', letterSpacing: '1px'}}>{index === 0 ? 'GENESIS BLOCK' : `BLOCK # ${index}`}</span><div className='time time-genesis'>on {blockMap[3]}</div></div>
+                  </div>
                 </div>
               </div>
+
+
+
             </div>
+
           )
         })
       }
+
       <AddCard onButtonClick={this.onButtonClick} onInputChange={this.onInputChange}/>
     </div>
   );

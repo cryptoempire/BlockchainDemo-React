@@ -25,3 +25,13 @@ input:hover {
 input:focus {
   outline: 0;
 }
+
+.arrow {
+  display: inline-block;
+  	position: relative;
+  	background: darkcyan;
+  	padding: 15px 0;
+
+  	width: 200px;
+  	text-align: center;
+}
