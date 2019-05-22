@@ -9,8 +9,10 @@
   width: 75px;
   height: 75px;
   margin-top: 5vh;
-  background-image: url('../../images/roundlogo.jpg');
+  background-image: url('../../images/roundlogo.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px;
+
 }
