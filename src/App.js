@@ -16,6 +16,8 @@ const initialState = {
     blocks : []
 };
 
+
+
 class App extends React.Component {
   constructor() {
     super();
@@ -59,6 +61,7 @@ onButtonClick = () => {
   return (
 
     <div>
+    
       <Roundlogo />
       <div className='title'>BLOCKCHAIN</div>
 
